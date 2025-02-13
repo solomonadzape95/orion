@@ -32,11 +32,14 @@ export function LandingPage() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full border border-white">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden hero-gradient">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-purple-500/20 animate-gradient"></div>
-        <div className="max-w-7xl mx-auto px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-purple-500/20 animate-gradient"
+        style={{
+          // backgroundImage: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)',
+        }}></div>
+        <div className="mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
               <div className="inline-flex items-center rounded-full border border-blue-500/20 px-4 py-1.5 text-sm font-medium bg-blue-500/10">

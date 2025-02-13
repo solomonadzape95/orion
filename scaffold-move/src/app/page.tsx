@@ -49,9 +49,9 @@ export default function Home() {
   }
 
   return (
-    <div className="">
+    <div className="white w-full relative">
       <NavBar />
-      <button onClick={() => setShowOnboarding(true)}>click</button>
+      {/* <button onClick={() => setShowOnboarding(true)}>click</button> */}
       <LandingPage />
       <OnboardingModal
         isOpen={showOnboarding}

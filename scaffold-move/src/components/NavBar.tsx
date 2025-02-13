@@ -13,8 +13,8 @@ export function NavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <nav className="border-b fixed inset-0 w-full z-50 pt-8">
+      <div className="mx-auto px-4 h-[58px] border border-gray-600 rounded-full max-w-7xl backdrop-blur-md flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="font-bold text-xl">
             Orion
