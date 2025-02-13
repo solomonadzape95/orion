@@ -1,0 +1,113 @@
+# VSCode Extension
+orion_vscode/out
+orion_vscode/dist
+orion_vscode/src/services/geminiService.ts
+orion_vscode/node_modules
+orion_vscode/.vscode-test/
+*.vsix
+
+# Web App
+orion_web/.next
+orion_web/out
+orion_web/build
+orion_web/dist
+orion_web/node_modules
+orion_web/.env
+orion_web/.env.local
+orion_web/.env.*.local
+# Web App
+scaffold-move/.next
+scaffold-move/out
+scaffold-move/build
+scaffold-move/dist
+scaffold-move/node_modules
+scaffold-move/.env
+scaffold-move/.env.local
+scaffold-move/.env.*.local
+
+# Move/Blockchain
+.aptos
+.movement
+move/build
+move/storage
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+.nyc_output
+*.lcov
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Misc
+.DS_Store
+*.pem
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Cache
+.cache
+.temp
+.tmp
+.eslintcache
+
+# Build
+dist
+build
+out
+
+# Logs
+logs
+*.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Supabase
+**/supabase/.temp
+**/supabase/.env
+
+# IPFS
+.ipfs
+
+# PDF Generation
+temp-pdfs/
+
+# Certificates
+certificates/
+*.crt
+*.key
+*.pem

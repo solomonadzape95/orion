@@ -1,0 +1,160 @@
+{
+  "name": "orion_auditor",
+  "displayName": "Orion Auditor",
+  "description": "AI-powered smart contract vulnerability scanner",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Security"
+  ],
+  "activationEvents": [
+    "onLanguage:solidity",
+    "onLanguage:rust",
+    "onCommand:orion-auditor.scan",
+    "onCommand:orion-auditor.showReport",
+    "onCommand:orion-auditor.scanFile",
+    "onCommand:orion-auditor.viewHistory"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "resources/orion.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "orion-auditor.scan",
+        "title": "Scan Current Contract",
+        "category": "Orion Auditor",
+        "icon": "$(search)"
+      },
+      {
+        "command": "orion-auditor.scanFile",
+        "title": "Scan Contract File",
+        "category": "Orion Auditor",
+        "icon": "$(file-search)"
+      },
+      {
+        "command": "orion-auditor.showReport",
+        "title": "Show Detailed Audit Report",
+        "category": "Orion Auditor",
+        "icon": "$(output)"
+      },
+      {
+        "command": "orion-auditor.viewHistory",
+        "title": "View Audit History",
+        "category": "Orion Auditor",
+        "icon": "$(history)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "orion-auditor.scan",
+        "key": "ctrl+alt+a",
+        "mac": "cmd+alt+a",
+        "when": "editorTextFocus"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "orion-auditor",
+          "title": "Orion Auditor",
+          "icon": "resources/orion.png"
+        }
+      ]
+    },
+    "views": {
+      "orion-auditor": [
+        {
+          "type": "webview",
+          "id": "orion-auditor.reportView",
+          "name": "Audit Report & History",
+          "icon": "resources/orion.png"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "orion-auditor.scan",
+          "when": "view == orion-auditor.reportView",
+          "group": "navigation"
+        },
+        {
+          "command": "orion-auditor.scanFile",
+          "when": "view == orion-auditor.reportView",
+          "group": "navigation"
+        },
+        {
+          "command": "orion-auditor.viewHistory",
+          "when": "view == orion-auditor.reportView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Orion Auditor",
+      "properties": {
+        "orionAuditor.geminiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API Key for Google Gemini"
+        },
+        "orionAuditor.scanOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scan contracts on save (enabled by default)"
+        },
+        "orionAuditor.severityLevel": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "default": "low",
+          "description": "Minimum severity level to report"
+        },
+        "orionAuditor.maxHistoryItems": {
+          "type": "number",
+          "default": 50,
+          "description": "Maximum number of audit history items to store"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^11.1.0",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.1.3",
+    "dotenv": "^16.0.3"
+  }
+}
