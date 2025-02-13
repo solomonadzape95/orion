@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,31 +16,37 @@ export function LandingPage() {
       author: "John D.",
       role: "Security Researcher",
       company: "DeFi Protocol",
-      comment: "The most comprehensive security analysis I've seen. Caught several critical vulnerabilities that other tools missed.",
+      comment:
+        "The most comprehensive security analysis I've seen. Caught several critical vulnerabilities that other tools missed.",
       rating: 5,
-      date: "2 days ago"
+      date: "2 days ago",
     },
     {
       id: 2,
       author: "Sarah M.",
       role: "Lead Engineer",
       company: "Web3 Studio",
-      comment: "Incredible attention to detail. The automated analysis combined with expert review gives us confidence in our deployments.",
+      comment:
+        "Incredible attention to detail. The automated analysis combined with expert review gives us confidence in our deployments.",
       rating: 5,
-      date: "1 week ago"
-    }
+      date: "1 week ago",
+    },
   ];
 
   return (
-    <div className="w-full border border-white">
+    <div className="w-full ">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden hero-gradient">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-purple-500/20 animate-gradient"
-        style={{
-          // backgroundImage: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)',
-        }}></div>
+      <section className="relative py-32 overflow-hidden border h-[150vh]">
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[#050219]/20 via-[#28194c]/20 to-purple-500/20"
+          style={
+            {
+              // backgroundImage: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)',
+            }
+          }
+        ></div>
         <div className="mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-4">
               <div className="inline-flex items-center rounded-full border border-blue-500/20 px-4 py-1.5 text-sm font-medium bg-blue-500/10">
                 <span className="relative flex h-2 w-2 mr-2">
@@ -53,19 +59,27 @@ export function LandingPage() {
                 Secure your smart contracts.
               </h1>
               <p className="text-xl text-blue-100/80 max-w-2xl mx-auto">
-                Top auditors compete to keep high-security bugs out of production.
+                Top auditors compete to keep high-security bugs out of
+                production.
               </p>
             </div>
-            <div className="flex justify-center gap-4">
+
+            <div className="flex justify-center gap-4 mt-12">
               {account?.address ? (
                 <Link href="/dashboard">
-                  <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all">
+                  <Button
+                    size="lg"
+                    className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all "
+                  >
                     Go to Dashboard
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               ) : (
-                <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all">
+                <Button
+                  size="lg"
+                  className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all"
+                >
                   Connect Wallet
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -74,28 +88,37 @@ export function LandingPage() {
 
             {/* Stats */}
             <div className="grid grid-cols-4 gap-8 mt-16">
-              <div className="text-center animate-float">
+              <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400">$12M</div>
                 <div className="text-sm text-blue-200/70">Total Paid</div>
               </div>
-              <div className="text-center animate-float-delayed">
+              <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400">20.3K</div>
                 <div className="text-sm text-blue-200/70">Audits Done</div>
               </div>
-              <div className="text-center animate-float">
+              <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400">14.2K+</div>
                 <div className="text-sm text-blue-200/70">Bugs Found</div>
               </div>
-              <div className="text-center animate-float-delayed">
+              <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400">400+</div>
                 <div className="text-sm text-blue-200/70">Active Auditors</div>
               </div>
             </div>
 
             {/* Hero Image */}
-            <div className="relative mt-16">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur-lg opacity-75 animate-pulse"></div>
-              <div className="relative rounded-lg overflow-hidden shadow-2xl border border-blue-500/20">
+            <div className="relative mt-16 w-full rounded-sm h-[100vh]">
+              {/* <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-lg blur-lg opacity-75 animate-pulse" /> */}
+              {/* <div className="absolute bg-gradient-to-b from-blue-300 to-red-600 z-20 blur-lg top-0 w-full" /> */}
+              {/* <div className="w-full absolute top-1/2 -translate-x-1/2 -translate-y-1/2 left-1/2 -z-10 flex items-center justify-center">
+                <Image
+                  width={700}
+                  height={400}
+                  src="/assets/blob.png"
+                  alt="blob"
+                />
+              </div> */}
+              <div className="relative rounded-lg overflow-hidden shadow-2xl border border-blue-500/20 backdrop-blur-sm h-full">
                 <Image
                   src="/assets/hero.jpg"
                   alt="Hero"
@@ -117,34 +140,44 @@ export function LandingPage() {
               Your security partners across the development lifecycle
             </h2>
             <p className="text-blue-200/70">
-              From the beginning of development through post-deployment monitoring, we help
-              you ship secure code faster.
+              From the beginning of development through post-deployment
+              monitoring, we help you ship secure code faster.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="bg-blue-900/20 border-blue-500/20 hover:border-blue-500/40 transition-all">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-2 text-blue-100">Competitive audit</h3>
+                <h3 className="text-xl font-semibold mb-2 text-blue-100">
+                  Competitive audit
+                </h3>
                 <p className="text-blue-200/70">
-                  Get your code reviewed by multiple auditors competing to find vulnerabilities
+                  Get your code reviewed by multiple auditors competing to find
+                  vulnerabilities
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-blue-900/20 border-blue-500/20 hover:border-blue-500/40 transition-all">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-2 text-blue-100">Private audit</h3>
+                <h3 className="text-xl font-semibold mb-2 text-blue-100">
+                  Private audit
+                </h3>
                 <p className="text-blue-200/70">
-                  Work directly with a trusted auditor for a comprehensive security review
+                  Work directly with a trusted auditor for a comprehensive
+                  security review
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-blue-900/20 border-blue-500/20 hover:border-blue-500/40 transition-all">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-2 text-blue-100">Diligence</h3>
+                <h3 className="text-xl font-semibold mb-2 text-blue-100">
+                  Diligence
+                </h3>
                 <p className="text-blue-200/70">
-                  Continuous security monitoring and automated vulnerability detection
+                  Continuous security monitoring and automated vulnerability
+                  detection
                 </p>
               </CardContent>
             </Card>
@@ -160,21 +193,34 @@ export function LandingPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.id} className={`bg-blue-900/20 border-blue-500/20 hover:border-blue-500/40 transition-all ${index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'}`}>
+              <Card
+                key={testimonial.id}
+                className={`bg-blue-900/20 border-blue-500/20 hover:border-blue-500/40 transition-all ${index % 2 === 0 ? "animate-float" : "animate-float-delayed"}`}
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
-                        <span className="text-blue-400 font-semibold">{testimonial.author[0]}</span>
+                        <span className="text-blue-400 font-semibold">
+                          {testimonial.author[0]}
+                        </span>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-blue-100">{testimonial.author}</h4>
-                        <p className="text-sm text-blue-200/70">{testimonial.role} @ {testimonial.company}</p>
+                        <h4 className="font-semibold text-blue-100">
+                          {testimonial.author}
+                        </h4>
+                        <p className="text-sm text-blue-200/70">
+                          {testimonial.role} @ {testimonial.company}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-blue-400" fill="currentColor" />
+                        <Star
+                          key={i}
+                          className="w-4 h-4 text-blue-400"
+                          fill="currentColor"
+                        />
                       ))}
                     </div>
                   </div>
@@ -195,18 +241,24 @@ export function LandingPage() {
             Ready to Secure Your Smart Contracts?
           </h2>
           <p className="text-xl mb-8 text-blue-200/70 max-w-2xl mx-auto">
-            Start your first audit today and ensure your contracts are secure and
-            optimized.
+            Start your first audit today and ensure your contracts are secure
+            and optimized.
           </p>
           {account?.address ? (
             <Link href="/dashboard">
-              <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all">
+              <Button
+                size="lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all"
+              >
                 Go to Dashboard
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
           ) : (
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all">
+            <Button
+              size="lg"
+              className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/50 transition-all"
+            >
               Connect Wallet
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -225,33 +277,50 @@ export function LandingPage() {
               </p>
               <div className="flex space-x-4">
                 <Link href="https://github.com" target="_blank">
-                  <Button variant="ghost" size="icon" className="text-blue-400 hover:text-blue-300">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-blue-400 hover:text-blue-300"
+                  >
                     <Github className="h-5 w-5" />
                   </Button>
                 </Link>
                 <Link href="https://twitter.com" target="_blank">
-                  <Button variant="ghost" size="icon" className="text-blue-400 hover:text-blue-300">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-blue-400 hover:text-blue-300"
+                  >
                     <Twitter className="h-5 w-5" />
                   </Button>
                 </Link>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4 text-blue-100">Product</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/features" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/features"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/pricing"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/docs"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Documentation
                   </Link>
                 </li>
@@ -262,17 +331,26 @@ export function LandingPage() {
               <h4 className="font-semibold mb-4 text-blue-100">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/about"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/blog"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/careers"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Careers
                   </Link>
                 </li>
@@ -283,12 +361,18 @@ export function LandingPage() {
               <h4 className="font-semibold mb-4 text-blue-100">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/privacy" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/privacy"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors">
+                  <Link
+                    href="/terms"
+                    className="text-sm text-blue-200/70 hover:text-blue-400 transition-colors"
+                  >
                     Terms of Service
                   </Link>
                 </li>

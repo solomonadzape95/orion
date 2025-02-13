@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { NavBar } from "@/components/NavBar";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
-import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
-import { Loading } from '@/components/ui/loading';
-import { supabase } from '@/lib/supabase/client';
-import { useRouter } from 'next/navigation';
-import { LandingPage } from '@/components/landing/LandingPage';
+import { OnboardingModal } from "@/components/onboarding/OnboardingModal";
+import { Loading } from "@/components/ui/loading";
+import { supabase } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
+import { LandingPage } from "@/components/landing/LandingPage";
 
 export default function Home() {
   const { account } = useWallet();
@@ -24,18 +24,18 @@ export default function Home() {
 
       try {
         const { data: profile } = await supabase
-          .from('profiles')
-          .select('*')
-          .eq('wallet_address', account.address)
+          .from("profiles")
+          .select("*")
+          .eq("wallet_address", account.address)
           .single();
 
         if (profile) {
-          router.push('/dashboard');
+          router.push("/dashboard");
         } else {
           setShowOnboarding(true);
         }
       } catch (error) {
-        console.error('Error checking profile:', error);
+        console.error("Error checking profile:", error);
       } finally {
         setIsCheckingProfile(false);
       }
@@ -49,7 +49,7 @@ export default function Home() {
   }
 
   return (
-    <div className="white w-full relative">
+    <div className="w-full relative">
       <NavBar />
       {/* <button onClick={() => setShowOnboarding(true)}>click</button> */}
       <LandingPage />
