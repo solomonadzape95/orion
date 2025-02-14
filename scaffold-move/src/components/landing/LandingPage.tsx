@@ -159,12 +159,12 @@ export function LandingPage() {
       </div>
 
       <section className="relative py-32 z-10 border-b border-white/5 backdrop-blur-md w-full max-w-7xl mx-auto">
-        <div className="absolute top-40 md:top-48 left-12 md:left-32 animate-float flex items-center rounded-full">
+        <div className="absolute top-40 md:top-48 left-12 md:left-20 animate-float flex items-center rounded-full">
           <Image
             width={100}
             height={100}
             draggable={"false"}
-            className="w-6 h-6 md:w-full md:h-full"
+            className="w-6 h-6 md:w-32 md:h-32"
             alt="lock"
             src="/assets/lock.png"
           />
@@ -258,13 +258,13 @@ export function LandingPage() {
         <div className="absolute -top-2 -right-48 w-[600px] h-[600px] bg-[#7531d8]/30 blur-[120px] rounded-xl" />
 
         <div className="max-w-7xl mx-auto px-4">
-          <div className="absolute top-52 right-12 animate-float flex items-center justify-center -z-20">
+          <div className="absolute top-52 right-16 animate-float flex items-center justify-center -z-20">
             <Image
-              width={200}
-              height={200}
+              width={500}
+              height={500}
               draggable={"false"}
               alt="lock"
-              className="w-16 h-16 md:w-full md:h-full"
+              className="w-16 h-16 md:w-40 md:h-40"
               src="/assets/rocket.png"
             />
           </div>
@@ -295,22 +295,7 @@ export function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="backdrop-blur-md bg-transparent border border-white/10 hover:border-cyan-400/30 transition-all group"
-              >
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-100 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <FeatureCard feature={feature} key={index} />
             ))}
           </div>
         </div>
@@ -408,37 +393,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <footer className="relative py-16 z-10 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-gray-100">Orion</h3>
-              <p className="text-sm text-gray-400 max-w-[200px]">
-                AI-powered smart contract security analysis platform
-              </p>
-              <div className="flex space-x-4">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-gray-400 hover:text-cyan-400"
-                >
-                  <Github className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-gray-400 hover:text-cyan-400"
-                >
-                  <Twitter className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="mt-12 pt-8 border-t border-white/5 text-center text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Orion. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -494,5 +449,50 @@ function FeatureCard({ feature }: { feature: any }) {
       </CardContent>
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
     </Card>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="relative py-16 z-10 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4">
+        <div>
+          <div className="space-y-6">
+            <Link href="/" className="w-32 relative block">
+              <div className="absolute top-1/2 left-0 -translate-y-1/2 w-4/5 h-8 bg-gradient-to-tr from-[#7531d8]/70 to-[#412b92]/90 blur-[20px] border borde-white -z-10" />
+              <Image
+                src="/logo.png"
+                alt="Orion"
+                width={100}
+                height={100}
+                className="w-full h-full md:w-[100px]"
+              />
+            </Link>
+            <p className="text-sm text-gray-400 max-w-[200px]">
+              AI-powered smart contract security analysis platform
+            </p>
+            <div className="flex space-x-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-400 hover:text-cyan-400"
+              >
+                <Github className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-400 hover:text-cyan-400"
+              >
+                <Twitter className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-white/5 text-center text-sm text-gray-400">
+          &copy; {new Date().getFullYear()} Orion. All rights reserved.
+        </div>
+      </div>
+    </footer>
   );
 }

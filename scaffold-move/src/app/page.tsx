@@ -49,7 +49,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full relative">
+    <div className="                                            w-full relative">
       <NavBar />
       {/* <button onClick={() => setShowOnboarding(true)}>click</button> */}
       <LandingPage />

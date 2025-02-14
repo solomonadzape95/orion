@@ -7,6 +7,7 @@ import { FileSearch, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { WalletButton } from "./wallet/WalletButton";
+import Image from "next/image";
 
 export function NavBar() {
   const { account } = useWallet();
@@ -17,7 +18,13 @@ export function NavBar() {
       <div className="px-4 h-[58px] border border-gray-600 rounded-full w-full max-w-7xl backdrop-blur-md flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="font-bold text-xl">
-            Orion
+            <Image
+              src="/logo.png"
+              alt="Orion"
+              width={100}
+              height={100}
+              className="w-[50px] h-full md:w-[100px]"
+            />
           </Link>
           {account?.address && (
             <div className="hidden md:flex items-center gap-4">

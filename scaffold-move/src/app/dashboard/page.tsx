@@ -1,21 +1,19 @@
-'use client';
-
-import { Dashboard } from "@/components/dashboard/Dashboard";
-import { NavBar } from "@/components/NavBar";
-import { useWallet } from "@aptos-labs/wallet-adapter-react";
-import { redirect } from "next/navigation";
+import { StatsGrid } from "@/components/dashboard/stats-grid";
+// import { AuditHistoryChart } from "@/components/dashboard/audit-history-chart";
+// import { LanguageDistribution } from "@/components/dashboard/language-distribution";
+// import { VulnerabilityFeed } from "@/components/dashboard/vulnerability-feed";
 
 export default function DashboardPage() {
-  const { account } = useWallet();
-
-
-
   return (
-    <div className="min-h-screen bg-background">
-      <NavBar />
-      <main className="container mx-auto px-4 py-8">
-        <Dashboard />
-      </main>
+    <div className="space-y-8">
+      <StatsGrid />
+
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <AuditHistoryChart />
+        <LanguageDistribution />
+      </div> */}
+
+      {/* <VulnerabilityFeed /> */}
     </div>
   );
 }
