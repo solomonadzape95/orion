@@ -15,17 +15,21 @@ export function WalletButton() {
   const [showDialog, setShowDialog] = useState(false);
   const { connected, adapter } = useAptosWallet();
   const [accountState, setAccountState] = useState<AccountInfo | null>(null);
-  console.log("account: ", accountState);
-  console.log("connected: ", connected);
+
+  // console.log("account: ", accountState);
+  // console.log("connected: ", connected);
+
   const getAccount = useCallback(async () => {
     if (adapter) {
       const account = await adapter.account();
       setAccountState(account);
     }
   }, [adapter]);
+
   useEffect(() => {
     getAccount();
   }, [getAccount]);
+
   return (
     <WalletDialog
       open={showDialog}

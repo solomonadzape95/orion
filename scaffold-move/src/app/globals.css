@@ -135,3 +135,50 @@
   animation: float 6s ease-in-out infinite;
   animation-delay: 4s;
 }
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Touch device detection */
+@media (hover: none) and (pointer: coarse) {
+  .infinite-scroll-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-infinite-scroll {
+    animation: none;
+  }
+}
+
+/* @keyframes infinite-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+*/

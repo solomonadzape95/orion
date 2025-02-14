@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -13,8 +13,8 @@ export function NavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b fixed inset-0 w-full z-50 pt-8">
-      <div className="mx-auto px-4 h-[58px] border border-gray-600 rounded-full max-w-7xl backdrop-blur-md flex items-center justify-between">
+    <nav className="fixed inset-0 w-full z-50 h-20 flex items-end justify-center">
+      <div className="px-4 h-[58px] border border-gray-600 rounded-full w-full max-w-7xl backdrop-blur-md flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="font-bold text-xl">
             Orion
@@ -44,7 +44,7 @@ export function NavBar() {
         </div>
         <div className="flex items-center gap-4">
           <WalletButton />
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
       </div>
     </nav>
