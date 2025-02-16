@@ -6,14 +6,11 @@ import { WalletProvider } from "@/components/WalletProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 import { PropsWithChildren } from "react";
 import { ReactQueryClientProvider } from "@/components/ReactQueryClientProvider";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "Orion - AI-Powered Smart Contract Auditor",
@@ -27,7 +24,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body
         className={cn(
           "flex justify-center min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          GeistMono.variable,
+          GeistSans.variable
         )}
       >
         <ThemeProvider
