@@ -13,28 +13,28 @@ export class DiagnosticProvider {
     this.decorationTypes = {
       critical: vscode.window.createTextEditorDecorationType({
         isWholeLine: true,
-        gutterIconPath: context.asAbsolutePath("resources/critical.svg"),
+        gutterIconPath: context.asAbsolutePath("resources/critical.png"),
         gutterIconSize: "80%",
         overviewRulerColor: new vscode.ThemeColor("editorError.foreground"),
         overviewRulerLane: vscode.OverviewRulerLane.Right,
       }),
       high: vscode.window.createTextEditorDecorationType({
         isWholeLine: true,
-        gutterIconPath: context.asAbsolutePath("resources/high.svg"),
+        gutterIconPath: context.asAbsolutePath("resources/high.png"),
         gutterIconSize: "80%",
         overviewRulerColor: new vscode.ThemeColor("editorWarning.foreground"),
         overviewRulerLane: vscode.OverviewRulerLane.Right,
       }),
       medium: vscode.window.createTextEditorDecorationType({
         isWholeLine: true,
-        gutterIconPath: context.asAbsolutePath("resources/medium.svg"),
+        gutterIconPath: context.asAbsolutePath("resources/medium.png"),
         gutterIconSize: "80%",
         overviewRulerColor: new vscode.ThemeColor("editorInfo.foreground"),
         overviewRulerLane: vscode.OverviewRulerLane.Right,
       }),
       low: vscode.window.createTextEditorDecorationType({
         isWholeLine: true,
-        gutterIconPath: context.asAbsolutePath("resources/low.svg"),
+        gutterIconPath: context.asAbsolutePath("resources/low.png"),
         gutterIconSize: "80%",
         overviewRulerColor: new vscode.ThemeColor("editorHint.foreground"), 
         overviewRulerLane: vscode.OverviewRulerLane.Right,

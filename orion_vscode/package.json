@@ -1,5 +1,5 @@
 {
-  "name": "orion_auditor",
+  "name": "Orion Auditor",
   "displayName": "Orion Auditor",
   "description": "AI-powered smart contract vulnerability scanner",
   "version": "0.0.1",
@@ -155,6 +155,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.1.3",
+    "@vscode/vsce": "^3.2.2",
     "dotenv": "^16.0.3"
   }
 }
