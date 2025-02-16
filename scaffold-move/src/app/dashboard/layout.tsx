@@ -1,6 +1,8 @@
+"use client"
+
 import "../globals.css";
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { Sidebar, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { SidebarNav } from "@/components/dashboard/sidebar-nav";
 import { Cog, GitCompare, History, LayoutDashboard } from "lucide-react";
 
@@ -30,8 +32,10 @@ const sidebarItems = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
-      <SidebarNav items={sidebarItems} />
-      <main className="p-4">
+      <Sidebar>
+        <SidebarNav items={sidebarItems} />
+      </Sidebar>
+      <main className="flex-1 p-4 lg:ml-16">
         <SidebarTrigger />
         {children}
       </main>
