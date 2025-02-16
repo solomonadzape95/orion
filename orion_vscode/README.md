@@ -1,71 +1,65 @@
-# orion-auditor README
+# Orion Auditor
 
-This is the README for your extension "orion-auditor". After writing up a brief description, we recommend including the following sections.
+Orion Auditor is a powerful VS Code extension that provides AI-powered smart contract vulnerability scanning. It helps developers identify and fix potential security issues in their smart contract code in real-time.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Real-time Vulnerability Scanning**: Automatically scans your smart contract code as you write
+- **AI-Powered Analysis**: Leverages advanced AI to detect potential security vulnerabilities
+- **Severity Levels**: Clear visual indicators for different severity levels (Critical, High, Medium, Low)
+- **Detailed Diagnostics**: Provides comprehensive explanations and suggestions for each identified issue
+- **In-line Highlighting**: Visual indicators in the editor gutter and overview ruler
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open VS Code
+2. Go to the Extensions view (Ctrl+Shift+X)
+3. Search for "Orion Auditor"
+4. Click Install
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+The extension automatically activates when you open a smart contract file. Vulnerabilities are highlighted in your code with different colors based on their severity level:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Critical: Severe vulnerabilities that need immediate attention
+- High: Important security issues that should be addressed
+- Medium: Potential vulnerabilities that should be reviewed
+- Low: Minor issues or best practice suggestions
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `orionauditor.enable`: Enable/disable the extension
+* `orionauditor.scanOnSave`: Enable/disable automatic scanning when saving files
+* `orionauditor.showInlineMessages`: Enable/disable inline diagnostic messages
+
+## Requirements
+
+- VS Code version 1.60.0 or higher
+- Internet connection for AI-powered analysis
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Please report any issues on our [GitHub repository](https://github.com/solomonadzape95/orion/issues).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1 - Initial Release
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Initial release of Orion Auditor
+- Basic smart contract vulnerability scanning
+- Support for multiple severity levels
+- Real-time diagnostics
 
 ---
 
-## Following extension guidelines
+## Contributing
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+## License
 
-## Working with Markdown
+This extension is licensed under the [MIT License](LICENSE).
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Happy Secure Coding!**
