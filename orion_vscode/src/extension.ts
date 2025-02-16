@@ -5,14 +5,17 @@ import { DiagnosticProvider } from './providers/diagnosticProvider';
 import { ReportWebviewProvider } from './providers/reportWebviewProvider';
 
 let scanInProgress = false;
+let diagnosticProvider: DiagnosticProvider;
+let outputChannel: vscode.OutputChannel;
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Activating Orion Auditor extension...');
+    outputChannel = vscode.window.createOutputChannel('Orion Auditor');
+    outputChannel.appendLine('Activating Orion Auditor extension...');
 
     // Initialize services
     const historyService = new HistoryService(context);
     const geminiService = new GeminiService();
-    const diagnosticProvider = new DiagnosticProvider(context);
+    diagnosticProvider = new DiagnosticProvider(context);
     const reportProvider = new ReportWebviewProvider(context.extensionUri, historyService);
 
     // Register the report webview
@@ -118,8 +121,8 @@ async function scanCurrentFile(
 
         vscode.window.showInformationMessage(progressMessage);
     } catch (error: any) {
-        console.error('Error scanning document:', error);
-        vscode.window.showErrorMessage(`Error scanning document: ${error.message}`);
+        outputChannel.appendLine(`Error scanning document: ${error}`);
+        vscode.window.showErrorMessage('Failed to scan document. Check Orion Auditor output for details.');
         diagnosticProvider.clearDiagnostics(document);
     } finally {
         scanInProgress = false;

@@ -1,15 +1,19 @@
 {
-  "name": "Orion Auditor",
+  "name": "orionauditor",
   "displayName": "Orion Auditor",
   "description": "AI-powered smart contract vulnerability scanner",
   "version": "0.0.1",
+  "publisher": "solenoid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solomonadzape95/orion.git"
+  },
   "engines": {
     "vscode": "^1.60.0"
   },
   "categories": [
     "Programming Languages",
-    "Linters",
-    "Security"
+    "Linters"
   ],
   "activationEvents": [
     "onLanguage:solidity",

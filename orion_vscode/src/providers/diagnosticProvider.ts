@@ -4,8 +4,11 @@ import { AuditIssue } from "../types";
 export class DiagnosticProvider {
   private diagnosticCollection: vscode.DiagnosticCollection;
   private decorationTypes: { [key: string]: vscode.TextEditorDecorationType };
+  private outputChannel: vscode.OutputChannel;
 
   constructor(context: vscode.ExtensionContext) {
+    this.outputChannel = vscode.window.createOutputChannel("Orion Diagnostics");
+
     this.diagnosticCollection =
       vscode.languages.createDiagnosticCollection("orion-auditor");
 
@@ -59,7 +62,7 @@ export class DiagnosticProvider {
         // Ensure we have a valid line number
         const lineNumber = issue.line_number - 1;
         if (lineNumber < 0 || lineNumber >= document.lineCount) {
-          console.warn(`Invalid line number ${issue.line_number} for issue: ${issue.title}`);
+          this.outputChannel.appendLine(`Invalid line number ${issue.line_number} for issue: ${issue.title}`);
           return;
         }
 
@@ -105,7 +108,8 @@ export class DiagnosticProvider {
         });
       }
     } catch (error) {
-      console.error("Error updating diagnostics:", error);
+      this.outputChannel.appendLine(`Error updating diagnostics: ${error}`);
+      vscode.window.showErrorMessage('Error updating diagnostics. Check Orion Diagnostics output for details.');
       this.clearDiagnostics(document);
     }
   }
