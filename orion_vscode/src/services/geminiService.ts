@@ -12,7 +12,7 @@ export class GeminiService {
         this.outputChannel = vscode.window.createOutputChannel('Orion Gemini Service');
         try {
             this.outputChannel.appendLine('Initializing GeminiService...');
-            const apiKey = "AIzaSyD5Bw5XkrywURBL06NYIzGw_oTtAm3-IKw";
+            const apiKey = process.env.GEMINI_API_KEY
             this.outputChannel.appendLine('API Key available: ' + !!apiKey);
             
             if (!apiKey) {
